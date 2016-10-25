@@ -1,5 +1,5 @@
 var mysql = require('mysql2');
-//var dbConnection = mysql.createConnection({
+
 var dbConnection = mysql.createPool({
     connectionLimit: 10,
     host: "localhost",
