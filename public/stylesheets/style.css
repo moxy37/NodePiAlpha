@@ -1,0 +1,138 @@
+
+
+/***************Acme Template Customizations***************/
+
+
+.form-control 
+{
+    width: auto!important; 
+    display: inline!important;
+    padding: 4px 6px!important;
+    height: 30px!important;
+}
+
+h2{
+    font-size: 1.7em!important;
+}
+
+th{
+    font-size: 1.7em!important;
+    font-weight: normal;
+    text-align: center;
+}
+footer 
+{
+background-color: #d54848!important;
+    padding-top: 42px!important;
+}
+
+
+.btn:hover{
+    background: #d54848;
+}
+.box-icon .btn {
+    padding: 0px 4px!important;
+}
+
+table{
+    width: auto!important;
+}
+td{
+    padding: 5px!important;
+}
+
+
+select[multiple], select[size] {
+    width: 100%;
+}
+
+
+.navbar {
+    margin-bottom: 20px!important;
+}
+.navbar-inner, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle  {
+    background: #be2c2c!important;
+}
+.btn-success, .btn-primary, .nav .dropdown-menu li > a:hover, .nav .dropdown-menu li > a:focus, .nav .dropdown-submenu:hover > a {
+    background: #d54848!important;
+}
+
+.content {
+    min-height: 40em!important;
+}
+
+DisplayInformation{
+    vertical-align: top;
+}
+.navbar-brand {
+    padding: 0 5px!important;
+}
+
+.navbar-inner {
+    min-height: 65px!important;
+}
+
+.navbar-brand span {
+    position: relative;
+    top: 16px;
+}
+
+
+a.navbar-brand span {
+    padding-left: 0!important;
+    margin-left: -12px!important;
+}
+
+.header-nav .nav {
+    margin-right: -16px!important;
+}
+
+.header-nav a.btn {
+    padding: 10px 15px!important;
+}
+
+.login-box h1 {
+    margin-left: 30px;
+}
+
+.badge {
+    font-size: 1em!important;
+    padding: 6px 8px!important;
+    margin: 5px 10px 5px 0;
+}
+
+.tab-menu.nav-tabs {
+    margin-right: 30px!important;
+}
+
+
+
+/***************Helpers***************/
+
+.no-margin {
+    margin: 0!important;
+}
+
+.flush-left {
+    margin-left: 0!important;
+}
+
+.float-right {
+    float:right;
+}
+
+.hide {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.mine {
+    cursor: hand;
+}
+
+div.center {
+    text-align: center;
+}

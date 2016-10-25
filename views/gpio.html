@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Node Pi Alpha</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/Acme/style.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/Acme/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="libs/jquery/dist/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="libs/bootstrap.min.js"></script>
+	<script type="text/javascript" src="libs/Acme/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="libs/Acme/core.min.js"></script>
+	<script type="text/javascript" src="javascripts/gpioview.js"></script>
+</head>
+
+<body>
+
+
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><span>Node Pi Alpha Example</span></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div id="sidebar-left" class="col-sm-1">
+				<div class="nav-collapse sidebar-nav navbar-collapse bs-navbar-collapse collapse">
+					<ul class="nav nav-tabs nav-stacked main-menu">
+						<li id="Home" class="active">
+							<a href="/"><i class="fa fa-home"></i><span class="hidden-sm">Home<br />Page</span></a>
+						</li>
+						<li id="Gpio">
+							<a href="/gpio"><i class="fa fa-rss"></i><span class="hidden-sm">GPIO<br />Config</span></a>
+						</li>
+						<li id="TestPage">
+							<a href="/test"><i class="fa fa-gear"></i><span class="hidden-sm">Test<br />Page</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="content" class="col-sm-11 content">
+				<!-- MAIN CONTENT HERE -->
+				<h1>GPIO Page</h1>
+
+				<div id="GpioList" class="col-sm-5"></div>
+				<div id="GpioInformation" class="col-sm-5">
+					<table>
+						<tr>
+							<th colspan="2">
+								Gpio Edit
+							</th>
+						</tr>
+						<tr>
+							<td>
+                                <input type="hidden" id="GpioId" value="" /> Pin:
+							</td>
+							<td><input type="text" id="GpioPin" value="" /></td>
+						</tr>
+                        <tr>
+                            <td>Pin Type:</td>
+                            <td>
+                                <select id="GpioPinType">
+                                    <option value="0">Output</option>
+                                    <option value="1">Input</option>
+                                    <option value="2">Button</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Status High:</td>
+                            <td><input type="text" id="GpioStatusHigh" value="" />
+                        </tr>
+                        <tr>
+                            <td>Status Low:</td>
+                            <td><input type="text" id="GpioStatusLow" value="" />
+                        </tr>
+                        <tr>
+                            <td>Status Data:</td>
+                            <td><input type="text" id="GpioStatusData" value="" />
+                        </tr>
+                        <tr>   
+                            <td>
+                                <input type="button" class="btn" value="Cancel" onclick="CancelGpio();" />
+                            </td>
+                            <td> 
+                                <input type="button" class="btn btn-primary" value="Save" onclick="SaveGpio();" />
+                            </td>
+                        </tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	<footer>
+		<div class="row">
+			<div class="col-sm-5">&copy; 2016</div>
+			<div class="col-sm-7 text-right">
+				app by Dean Brennan
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript">
+
+                window.onload = function(){
+                    $("#Home").removeClass('active');
+                    //$("#Gpio").removeClass('active');
+                    $("#TestPage").removeClass('active');
+                    $("#GpioInformation").hide();
+                    GetGpioList();
+                }
+            </script>
+</body>
+
+</html>
