@@ -1,2 +1,2 @@
-cd /home/pi/NodePiAlpha
+cd /home/pi/alpha
 sudo node app.js
