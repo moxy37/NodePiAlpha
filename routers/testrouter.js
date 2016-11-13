@@ -21,6 +21,11 @@ router.post('/set_gpio_out', function (req, res) {
 router.get('/test_gpio_high/:id', function (req, res) {
 
     var id = req.params.id;
+    var pin =12;
+    var status = true;
+    if(__light===true){
+
+    }
     console.log("Got High Reading for " + id);
     return res.send("OK");
 });
