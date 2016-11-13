@@ -3,7 +3,7 @@ import time
 import sys
 #import httplib
 
-url = "http://127.0.0.1:3002"
+url = "http://127.0.0.1"
 pin = int(sys.argv[1])
 status = sys.argv[2]
 index = 0

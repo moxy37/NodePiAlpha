@@ -26,8 +26,8 @@ app.get('/', routes.index);
 app.get('/test', routes.test);
 app.get('/gpio', routes.gpio);
 
-app.listen(3002, function () {
-	console.log('Node Alpha app listening on port 3002!');
+app.listen(80, function () {
+	console.log('Node Alpha app listening!');
 });
 var GpioController = require(__base + 'controllers/gpiocontroller');
 var controller = new GpioController();
