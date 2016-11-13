@@ -18,6 +18,32 @@ router.post('/set_gpio_out', function (req, res) {
     });
 });
 
+router.get('/motion/:id', function (req, res) {
+     var id = req.params.id;
+     var pin = 12;
+    var status = true;
+    controller.gpioOut(pin, status, function (err) {
+        if (err) {
+            console.error(err.stack);
+            return res.status(400).send(err.message);
+        }
+        res.send("OK");
+    });
+});
+
+router.get('/no_motion/:id', function (req, res) {
+     var id = req.params.id;
+     var pin = 12;
+    var status = false;
+    controller.gpioOut(pin, status, function (err) {
+        if (err) {
+            console.error(err.stack);
+            return res.status(400).send(err.message);
+        }
+        res.send("OK");
+    });
+});
+
 router.get('/test_gpio_high/:id', function (req, res) {
 
     var id = req.params.id;
