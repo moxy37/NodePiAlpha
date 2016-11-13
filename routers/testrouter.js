@@ -28,7 +28,7 @@ router.get('/test_gpio_high/:id', function (req, res) {
         __light = false;
     } else {
         status = true;
-        __light = false;
+        __light = true;
     }
     controller.gpioOut(pin, status, function (err) {
         if (err) {
