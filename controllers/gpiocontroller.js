@@ -69,6 +69,8 @@ function GpioController() {
                     cmd.run('python ' + __base + 'GpioIn.py ' + g.pin + ' ' + g.statusHigh + ' ' + g.statusLow + ' ' + g.statusData);
                 } else if (g.pinType === 2) {
                     cmd.run('python ' + __base + 'GpioButton.py ' + g.pin + ' ' + g.statusHigh);
+                } else if (g.pinType === 0) {
+
                 }
             });
             return callback();
