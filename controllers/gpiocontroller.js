@@ -61,9 +61,10 @@ function GpioController() {
         con.query("SELECT * FROM Gpio WHERE pinType <> 0", function (err, result) {
             if (err) return callback(err);
             gpios = [];
+            var cmd = require('node-cmd');
+            cmd.run('pkill -9 python');
             result.forEach(function (element) {
                 var g = new Gpio(element);
-                var cmd = require('node-cmd');
 
                 if (g.pinType === 1) {
                     cmd.run('python ' + __base + 'GpioIn.py ' + g.pin + ' ' + g.statusHigh + ' ' + g.statusLow + ' ' + g.statusData);

@@ -11,13 +11,16 @@ router.get('/delete_gpio/:id', function (req, res) {
             console.error(err.stack);
             return res.status(404).send(err.message);
         }
-        controller.list(function (err, gpios) {
-            if (err) {
-                console.log(err.stack);
-                return res.status(404).send(err.message);
-            }
-            return res.send(gpios);
+        controller.startGPio(function (err) {
+            controller.list(function (err, gpios) {
+                if (err) {
+                    console.log(err.stack);
+                    return res.status(404).send(err.message);
+                }
+                return res.send(gpios);
+            });
         });
+
     });
 });
 
@@ -33,12 +36,14 @@ router.post('/save_gpio', function (req, res) {
             console.error(err.stack);
             return res.status(400).send(err.message);
         }
-        controller.list(function (err, gpios) {
-            if (err) {
-                console.log(err.stack);
-                return res.status(404).send(err.message);
-            }
-            return res.send(gpios);
+        controller.startGPio(function (err) {
+            controller.list(function (err, gpios) {
+                if (err) {
+                    console.log(err.stack);
+                    return res.status(404).send(err.message);
+                }
+                return res.send(gpios);
+            });
         });
     });
 });
