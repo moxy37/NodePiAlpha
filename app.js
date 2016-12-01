@@ -1,5 +1,6 @@
 global.__base = __dirname + '/';
 global.__light = false;
+global.__robert = false;
 
 var express = require('express');
 var path = require('path');
