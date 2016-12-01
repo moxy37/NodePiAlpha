@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 app.get('/test', routes.test);
 app.get('/gpio', routes.gpio);
-
+app.get('/robert', routes.test);
 app.listen(3001, function () {
 	console.log('Node Alpha app listening on port 3001!');
 });
