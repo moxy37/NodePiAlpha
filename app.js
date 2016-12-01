@@ -36,5 +36,5 @@ controller.startGpio(function (err) { });
 
 app.use('/', require('./routers/testrouter'));
 app.use('/', require('./routers/gpiorouter'));
-
+app.use('/', require('./routers/robertrouter'));
 module.exports = app;

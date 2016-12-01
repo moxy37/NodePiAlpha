@@ -7,7 +7,8 @@ router = express.Router();
 router.get('/hello_world/:id', function (req, res) {
     var id = parseInt(req.params.id);
     id++;
-    res.send(id);
+    var temp = 'Hello ' + id;
+    res.send(temp);
 });
 
 module.exports = router;
