@@ -35,7 +35,7 @@ while True:
 		#result = response.read()
 		#conn.close()
 		#print(result)
-		time.sleep(1)
+		time.sleep(0.2)
 	except KeyboardInterrupt:  
 		g.cleanup()       # clean up GPIO on CTRL+C exit  
 	g.cleanup()           # clean up GPIO on normal exit  
