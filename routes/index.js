@@ -9,3 +9,7 @@ exports.test = function (req, res) {
 exports.gpio = function (req, res) {
     res.render('gpio');
 };
+
+exports.robert = function(req,res){
+    res.render('robert');
+}
