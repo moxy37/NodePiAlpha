@@ -45,6 +45,7 @@ router.get('/no_motion/:id', function (req, res) {
 });
 router.get('/robert_test/:id', function (req, res) {
     var status = true;
+    var pin = 12;
     if (__robert === true) {
         status = false;
         __robert = false;
