@@ -43,14 +43,14 @@ router.get('/no_motion/:id', function (req, res) {
         res.send("OK");
     });
 });
-router.get('/robert_test/:id', function (req, res) {
+router.get('/test_bj', function (req, res) {
     var status = true;
     var pin = 12;
-    if (__robert === true) {
+    if (__bjLight === true) {
         status = false;
-        __robert = false;
+        __bjLight = false;
     } else {
-        __robert = true;
+        __bjLight = true;
 
     }
     var cmd = require('node-cmd');

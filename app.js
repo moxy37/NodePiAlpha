@@ -1,6 +1,6 @@
 global.__base = __dirname + '/';
 global.__light = false;
-global.__robert = false;
+global.__bjLight = false;
 
 var express = require('express');
 var path = require('path');
@@ -27,7 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 app.get('/test', routes.test);
 app.get('/gpio', routes.gpio);
-app.get('/robert', routes.robert);
 app.listen(3001, function () {
 	console.log('Node Alpha app listening on port 3001!');
 });
@@ -37,5 +36,4 @@ controller.startGpio(function (err) { });
 
 app.use('/', require('./routers/testrouter'));
 app.use('/', require('./routers/gpiorouter'));
-app.use('/', require('./routers/robertrouter'));
 module.exports = app;
