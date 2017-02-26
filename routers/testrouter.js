@@ -43,7 +43,7 @@ router.get('/no_motion/:id', function (req, res) {
         res.send("OK");
     });
 });
-router.get('/test_bj', function (req, res) {
+router.get('/test_bj/:id', function (req, res) {
     var status = true;
     var pin = 12;
     if (__bjLight === true) {
