@@ -6,7 +6,8 @@ var dbConnection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'root',
-  database : 'alpha'
+  database : 'alpha',
+  insecureAuth : true
 });
  
 // dbConnection.connect();// var dbConnection = mysql.createPool({
