@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.listen(3001, function () {
+app.listen(80, function () {
 	console.log('Node Alpha app listening on port 80!');
 });
 
