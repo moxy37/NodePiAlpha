@@ -3,11 +3,10 @@ Very basic examples of how to interact with various plugins for a Pi.  Installin
 Once the image is installed load the Pi up and execute the following commands to ensure all software is installed correctly.
 
     sudo apt-get update --fix-missing
-	sudo apt-get install mysql-server
 	curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash 
 	sudo apt-get install -y nodejs 
 	sudo apt-get install -y build-essential
-	sudo apt-get install mysql-server
+	sudo apt-get install mysql-server --fix-missing
 	git clone https://github.com/moxy37/NodePiAlpha.git alpha
 	cd alpha
 	sudo mysql -u root -proot
@@ -23,7 +22,7 @@ To start web system
 
 Sample link to log data
 
-    http://127.0.0.1/cow_result/b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2
+    http://127.0.0.1/api/cow/log/b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2
 
 Code to run python script open new terminal window
 
