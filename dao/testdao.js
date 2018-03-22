@@ -11,7 +11,10 @@ function TestDAO() {
     }
     this.logCow = function (obj, next) {
         con.query("INSERT INTO CowLog (cowId, latitude, longitude, temp, timestamp) VALUES (?, ?, ?, ?, ?)", [obj.cowId, obj.latitude, obj.longitude, obj.temp, obj.timestamp], function (err, result) {
-            if (err) return callback(err);
+            if (err) {
+                console.log(err);
+                return next(err);
+            }
             console.log("Added new Log " + result.affectedRows);
             next(null, obj);
         });
