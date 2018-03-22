@@ -3,13 +3,23 @@
 import serial, string
 
 output = " "
-ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1)
+ser = serial.Serial('/dev/ttyACM0', 9600)
+print("Starting")
 while True:
-	print("----")
 	while output != "":
 		
 		
 		output = ser.readline()
+		output = output[:-2]
 		o = output.split(' ')
+		lat = ''
+		lon = ''
 		print(o)
-		print(output)
+		for x in range(0, len(o)):
+			if o[x] != '':
+				if lat == '':
+					lat = o[x]
+				else:
+					lon = o[x]
+		print(lat)
+		print(lon)
