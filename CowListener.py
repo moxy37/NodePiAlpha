@@ -20,7 +20,7 @@ while True:
         output2 = cowId + '_' + latitude + '_' + longitude + '_' + temp
         print(output)
         try:
-            some_url = url + '/cow_result/' + output2
+            some_url = url + '/api/cow/log/' + output2
             import urllib2
             f = urllib2.urlopen(some_url)
             print f.read()
