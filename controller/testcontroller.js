@@ -4,9 +4,9 @@ var dao = new TestDAO();
 var CowLog = require(__base + 'models/cowlog');
 router = express.Router();
 
-dao.startLogs(function (err) {
-    console.log("Starting listening");
-});
+// dao.startLogs(function (err) {
+//     console.log("Starting listening");
+// });
 
 router.get('/cow_result/:result', function (req, res) {
     //b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2

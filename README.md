@@ -16,4 +16,22 @@ Once the image is installed load the Pi up and execute the following commands to
 	sudo mysql -u root -proot alpha < alpha.sql
 	sudo node app.js
 
-This will start a web-server running on port 3002 on this pi.
+To start web system
+
+    cd /home/pi/alpha
+    sudo node app.js
+
+Sample link to log data
+
+    http://127.0.0.1/cow_result/b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2
+
+Code to run python script open new terminal window
+
+    python /home/pi/alpha/CowListener.py
+
+To see database results open new terminal window
+
+    sudo mysql -u root -proot alpha
+    SELECT * FROM CowLog;
+
+This will start a web-server running on port 80 on this pi.

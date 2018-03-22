@@ -5,7 +5,7 @@ import string
 import time
 import sys
 
-url = "http://127.0.0.1:3001"
+url = "http://127.0.0.1"
 
 output = " "
 latitude = '51.323'

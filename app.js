@@ -22,8 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.listen(3001, function () {
-	console.log('Node Alpha app listening on port 3001!');
+app.listen(80, function () {
+	console.log('Node Alpha app listening on port 80!');
 });
 
 app.use('/', require('./controller/testcontroller'));
