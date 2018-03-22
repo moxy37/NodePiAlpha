@@ -14,12 +14,14 @@ while True:
 		o = output.split(' ')
 		lat = ''
 		lon = ''
-		print(o)
+		#print(o)
 		for x in range(0, len(o)):
 			if o[x] != '':
 				if lat == '':
 					lat = o[x]
 				else:
 					lon = o[x]
-		print(lat)
-		print(lon)
+		latitude = float(lat)/100
+		longitude = float(lon)/-100
+		print(latitude)
+		print(longitude)
