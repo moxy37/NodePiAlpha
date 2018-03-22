@@ -1,9 +1,9 @@
 var con = require(__base + 'dbConnection');
 
-module.exports = TestController;
+module.exports = TestDAO;
 
 
-function TestController() {
+function TestDAO() {
     this.gpioOut = function (pin, status, callback) {
         var cmd = require('node-cmd');
         if (String(status) === 'true') {

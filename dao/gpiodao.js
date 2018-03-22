@@ -1,9 +1,9 @@
 var con = require(__base + 'dbConnection');
 var Gpio = require(__base + 'models/gpio');
 
-module.exports = GpioController;
+module.exports = GpioDAO;
 
-function GpioController() {
+function GpioDAO() {
     this.create = function (obj, callback) {
         con.query("INSERT INTO Gpio (id, pin, pinType, statusHigh, statusLow, statusData) VALUES (?, ?, ?, ?, ?, ?)", [obj.id, obj.pin, obj.pinType, obj.statusHigh, obj.statusLow, obj.statusData], function (err, result) {
             if (err) return callback(err);

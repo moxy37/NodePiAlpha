@@ -9,9 +9,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
 
-var routes = require('./routes');
-
-
 var app = express();
 
 app.engine('html', cons.swig)
@@ -24,16 +21,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.index);
-app.get('/test', routes.test);
-app.get('/gpio', routes.gpio);
+
 app.listen(3001, function () {
 	console.log('Node Alpha app listening on port 3001!');
 });
-var GpioController = require(__base + 'controllers/gpiocontroller');
+var GpioController = require(__base + 'dao/gpiodao');
 var controller = new GpioController();
 controller.startGpio(function (err) { });
 
-app.use('/', require('./routers/testrouter'));
-app.use('/', require('./routers/gpiorouter'));
+app.use('/', require('./controller/testcontroller'));
+app.use('/', require('./controller/gpiocontroller'));
 module.exports = app;
