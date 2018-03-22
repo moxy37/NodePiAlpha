@@ -25,10 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(3001, function () {
 	console.log('Node Alpha app listening on port 3001!');
 });
-var GpioController = require(__base + 'dao/gpiodao');
-var controller = new GpioController();
-controller.startGpio(function (err) { });
 
 app.use('/', require('./controller/testcontroller'));
-app.use('/', require('./controller/gpiocontroller'));
+
 module.exports = app;

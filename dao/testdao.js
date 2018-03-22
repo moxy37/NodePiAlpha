@@ -14,4 +14,12 @@ function TestDAO() {
 
         callback();
     }
+    this.create = function (obj, callback) {
+        con.query("INSERT INTO Gpio (id, pin, pinType, statusHigh, statusLow, statusData) VALUES (?, ?, ?, ?, ?, ?)", [obj.id, obj.pin, obj.pinType, obj.statusHigh, obj.statusLow, obj.statusData], function (err, result) {
+            if (err) return callback(err);
+            console.log("Added new Gpio " + result.affectedRows);
+            obj.isNew = false;
+            callback(null, obj);
+        });
+    }
 }
