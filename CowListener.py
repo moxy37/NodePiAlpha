@@ -4,6 +4,7 @@ import serial
 import string
 import time
 import sys
+import urllib2
 
 url = "http://127.0.0.1"
 
@@ -21,7 +22,6 @@ while True:
         print(output)
         try:
             some_url = url + '/api/cow/log/' + output2
-            import urllib2
             f = urllib2.urlopen(some_url)
             print f.read()
         except:
