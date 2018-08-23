@@ -10,7 +10,7 @@ function TestDAO() {
         next();
     }
     this.logCow = function (obj, next) {
-        con.query("INSERT INTO CowLog (cowId, latitude, longitude, temp, timestamp) VALUES (?, ?, ?, ?, ?)", [obj.cowId, obj.latitude, obj.longitude, obj.temp, obj.timestamp], function (err, result) {
+        con.query("INSERT INTO CowLog (cowId, latitude, longitude, temp1, temp2, rssi, timestamp, notes) VALUES (?, ?, ?, ?, ?, ?, ?)", [obj.cowId, obj.latitude, obj.longitude, obj.temp1, obj.temp2, obj.rssi, obj.timestamp, obj.notes], function (err, result) {
             if (err) {
                 console.log(err);
                 return next(err);

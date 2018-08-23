@@ -11,14 +11,23 @@ url = "http://127.0.0.1"
 output = " "
 latitude = '51.323'
 longitude = '-114.213'
-temp = '37.2'
-cowId = 'b66a0f6f-487a-4073-8c0c-6242fd3a217b'
+temp1 = '37.2'
+temp2 = '37.4'
+cowid = '1'
+rssi = '0'
 ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1)
 while True:
     print "Reading"
     while output != "":
         output = ser.readline()
-        output2 = cowId + '_' + latitude + '_' + longitude + '_' + temp
+        data = output.split(':')
+        latitude = data[0]
+        longitude = data[1]
+        rssi = data[2]
+        cowid = data[3]
+        temp1 = data[4]
+        temp2 = data[5]
+        output2 = latitude + '_' + longitude + '_' + rssi + '_' + cowid + '_' + temp1 + '_' + temp2
         print(output)
         try:
             some_url = url + '/api/cow/log/' + output2

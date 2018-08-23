@@ -13,16 +13,19 @@ router.get('/api/cow/log/:result', function (req, res) {
     var result = req.params.result;
     var data = result.split('_');
     var c = new CowLog();
-    c.cowId = data[0];
-    c.longitude = parseFloat(data[2]);
-    c.latitude = parseFloat(data[1]);
-    c.temp = parseFloat(data[3]);
+    c.cowId = data[3];
+    c.longitude = parseFloat(data[1]);
+    c.latitude = parseFloat(data[0]);
+    c.temp1 = parseFloat(data[4]);
+    c.temp2 = parseFloat(data[5]);
+    c.rssi = parseFloat(data[2]);
+    c.notes = '';
     dao.logCow(c, function (err, result) {
         if (err) {
             console.error(err.stack);
             return res.status(400).send(err.message);
         }
-        res.send("OK");
+        return res.send("OK");
     });
 });
 
