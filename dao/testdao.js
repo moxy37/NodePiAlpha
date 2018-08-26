@@ -16,7 +16,18 @@ function TestDAO() {
                 return next(err);
             }
             console.log("Added new Log " + result.affectedRows);
-            next(null, obj);
+            return next(null, obj);
+        });
+    }
+
+    this.updateNotes = function (notes, next) {
+        con.query("UPDATE CowLog SET notes=? WHERE notes=''", notes, function (err, result) {
+            if (err) {
+                console.log(err);
+                return next(err);
+            }
+            console.log("Updating rows " + result.affectedRows);
+            return next(null, notes);
         });
     }
 }

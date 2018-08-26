@@ -4,9 +4,20 @@ var dao = new TestDAO();
 var CowLog = require(__base + 'models/cowlog');
 router = express.Router();
 
-// dao.startLogs(function (err) {
-//     console.log("Starting listening");
-// });
+
+
+router.get('/api/cow/start', function (req, res) {
+    dao.startLogs(function (err) {
+        console.log("Starting listening");
+        if (err) {
+            console.error(err.stack);
+            return res.status(400).send(err.message);
+        }
+        var t = new Object();
+        t.status = "OK";
+        return res.send(t);
+    });
+});
 
 router.get('/api/cow/log/:result', function (req, res) {
     //b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2
@@ -25,7 +36,22 @@ router.get('/api/cow/log/:result', function (req, res) {
             console.error(err.stack);
             return res.status(400).send(err.message);
         }
-        return res.send("OK");
+        var t = new Object();
+        t.status = "OK";
+        return res.send(t);
+    });
+});
+
+router.get('/api/cow/update/:notes', function (req, res) {
+    var notes = req.params.notes;
+    dao.updateNotes(notes, function (err, result) {
+        if (err) {
+            console.error(err.stack);
+            return res.status(400).send(err.message);
+        }
+        var t = new Object();
+        t.status = "OK";
+        return res.send(t);
     });
 });
 
