@@ -1,5 +1,5 @@
 global.__base = __dirname + '/';
-global.__light = false;
+global.__light = 1;
 global.__bjLight = false;
 
 var express = require('express');

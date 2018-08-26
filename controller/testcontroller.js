@@ -55,6 +55,16 @@ router.get('/api/cow/update/:notes', function (req, res) {
     });
 });
 
+router.get('/api/light/set/:value', function (req, res) {
+    var value = parseInt(req.params.value);
+    __light = value;
+    var t = new Object();
+    t.value = value;
+    return res.send(t);
+});
+router.get('/api/light/get', function (req, res) {
+    return res.send(__light);
+});
 router.get('/', function (req, res) {
     res.render('index');
 });
