@@ -22,7 +22,7 @@ To start web system
 
 Sample link to log data
 
-    http://127.0.0.1/api/cow/log/b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2
+    http://127.0.0.1/api/cow/log/51.332_-114.3_-56_b66a0f6f-487a-4073-8c0c-6242fd3a217b_37.2_34.2
 
 Code to run python script open new terminal window
 
