@@ -62,12 +62,38 @@ def ReturnString(x):
         pass
     return r
 
+url = 'http://' + sys.argv[1]
+latitude = '51.323'
+longitude = '-114.213'
+temp1 = '37.2'
+temp2 = '37.4'
+cowid = '1'
+rssi = '0'
 output = " "
-ser = serial.Serial('/dev/tty' + sys.argv[1], 9600, 8, 'N', 1, timeout=1)
+ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
+
 while True:
     print("----")
+    tempstr = ''
     while output != "":
         output = ser.readline()
-        print(output)
-        print("Line ENd")
+        tempstr = tempstr + str(output)
+
+    o = ReturnString(tempstr)
+    print(o)
+    data = o.split(':')
+    latitude = data[0]
+    longitude = data[1]
+    rssi = data[2]
+    cowid = data[3]
+    temp1 = data[4]
+    temp2 = data[5]
+    output2 = latitude + '_' + longitude + '_' + rssi + '_' + cowid + '_' + temp1 + '_' + temp2
+    print(output2)
+    try:
+        some_url = url + '/api/cow/log/' + output2
+        f = urllib2.urlopen(some_url)
+        print f.read()
+    except:
+        pass
     output = " "
