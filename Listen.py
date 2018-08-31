@@ -78,22 +78,25 @@ while True:
     while output != "":
         output = ser.readline()
         tempstr = tempstr + str(output)
-
-    o = ReturnString(tempstr)
-    print(o)
-    data = o.split(':')
-    latitude = data[0]
-    longitude = data[1]
-    rssi = data[2]
-    cowid = data[3]
-    temp1 = data[4]
-    temp2 = data[5]
-    output2 = latitude + '_' + longitude + '_' + rssi + '_' + cowid + '_' + temp1 + '_' + temp2
-    print(output2)
+    print(tempstr)
     try:
-        some_url = url + '/api/cow/log/' + output2
-        f = urllib2.urlopen(some_url)
-        print f.read()
+        o = ReturnString(tempstr)
+        print(o)
+        data = o.split(':')
+        latitude = data[0]
+        longitude = data[1]
+        rssi = data[2]
+        cowid = data[3]
+        temp1 = data[4]
+        temp2 = data[5]
+        output2 = latitude + '_' + longitude + '_' + rssi + '_' + cowid + '_' + temp1 + '_' + temp2
+        print(output2)
+        try:
+            some_url = url + '/api/cow/log/' + output2
+            f = urllib2.urlopen(some_url)
+            print f.read()
+        except:
+            pass
     except:
         pass
     output = " "
