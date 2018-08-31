@@ -4,7 +4,7 @@ import serial
 import string
 import time
 import sys
-import urllib2
+
 
 def StringToInt(x):
     y = 0
@@ -93,9 +93,10 @@ while True:
         print(output2)
         some_url = url + '/api/cow/log/' + output2
         try:
-            import urllib.request
-            contents = urllib.request.urlopen(some_url).read()
-            #f = urllib2.urlopen(some_url).read()
+            #import urllib.request
+            #contents = urllib.request.urlopen(some_url).read()
+            import urllib2
+            f = urllib2.urlopen(some_url).read()
         except:
             print("FAILED: "+some_url)
     except:
