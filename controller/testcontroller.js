@@ -21,7 +21,8 @@ router.get('/api/cow/start', function (req, res) {
 
 router.get('/api/cow/log/:result', function (req, res) {
     //b66a0f6f-487a-4073-8c0c-6242fd3a217b_-114.232_51.332_37.2
-    var result = req.params.result;
+    var r2 = req.params.result;
+    var result = r2.replace(/[^\x20-\x7E]/g, '');
     var data = result.split('_');
     var c = new CowLog();
     c.cowId = data[3];
