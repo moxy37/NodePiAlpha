@@ -103,19 +103,19 @@ while True:
             #urlreq.urlopen(req).read()
             #import urllib.request
             #contents = urllib.request.urlopen(some_url).read()
-            import requests
-            r3 = requests.get(url = some_url, params = {})
             
+            import urllib2
+            f = urllib2.urlopen(some_url)
+            rr = f.read()
+            print(str(rr))
             #r = requests.get(some_url)
             #import httplib2
             #resp, content = httplib2.Http().request(some_url)
         except Exception, e:
             print('ERROR: '+ str(e))
             try:
-                import urllib2
-                f = urllib2.urlopen(some_url)
-                rr = f.read()
-                print(str(rr))
+                import requests
+                r3 = requests.get(some_url)
             except Exception, e:
                 print('ERROR: '+ str(e))
     except Exception, e:
