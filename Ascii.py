@@ -69,7 +69,7 @@ temp1 = '37.2'
 temp2 = '37.4'
 cowid = '1'
 rssi = '0'
-ser = serial.Serial('/dev/ttyACM0', 9600, 8, 'N', 1, timeout=1)
+ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
 oo = ' '
 while True:
     while True:
