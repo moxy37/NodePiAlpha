@@ -93,14 +93,21 @@ while True:
         print(output2)
         some_url = url + "/api/cow/log/" + output2
         try:
+            try:
+                import urllib2 as urlreq # Python 2.x
+            except:
+                import urllib.request as urlreq # Python 3.x
+            req = urlreq.Request(some_url)
+            req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
+            urlreq.urlopen(req).read()
             #import urllib.request
             #contents = urllib.request.urlopen(some_url).read()
             #import urllib2
             #f = urllib2.urlopen(some_url).read()
             #import requests
             #r = requests.get(some_url)
-            import httplib2
-            resp, content = httplib2.Http().request(some_url)
+            #import httplib2
+            #resp, content = httplib2.Http().request(some_url)
         except:
             print("FAILED: "+ some_url)
     except:
