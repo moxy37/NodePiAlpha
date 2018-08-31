@@ -116,7 +116,7 @@ while True:
                 rr = f.read()
                 print(str(rr))
             except Exception, e:
-                print('ERROR: '+ str(e)):
+                print('ERROR: '+ str(e))
     except Exception, e:
-        print('ERROR: '+ str(e)):
+        print('ERROR: '+ str(e))
     output = " "
