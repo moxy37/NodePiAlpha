@@ -4,8 +4,7 @@ import serial
 import string
 import time
 import sys
-#import urllib2
-from urllib.request import urlopen
+import urllib2
 
 def StringToInt(x):
     y = 0
@@ -92,12 +91,12 @@ while True:
         temp2 = data[5]
         output2 = latitude + '_' + longitude + '_' + rssi + '_' + cowid + '_' + temp1 + '_' + temp2
         print(output2)
+        some_url = url + '/api/cow/log/' + output2
         try:
-            some_url = url + '/api/cow/log/' + output2
-            html = urlopen(some_url)
-            print(html)
+            f = urllib2.urlopen(some_url)
+            print(f.read())
         except:
-            pass
+            print("FAILED: "+some_url)
     except:
         pass
     output = " "
