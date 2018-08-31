@@ -62,7 +62,7 @@ def ReturnString(x):
         pass
     return str(r)
 
-url = "http://" + sys.argv[1] + ""
+url = 'http://' + sys.argv[1]
 latitude = '51.323'
 longitude = '-114.213'
 temp1 = '37.2'
@@ -89,9 +89,9 @@ while True:
         cowid = data[3]
         temp1 = data[4]
         temp2 = data[5]
-        output2 = str(latitude) + "_" + str(longitude) + "_" + str(rssi) + "_" + str(cowid) + "_" + str(temp1) + "_" + str(temp2)
+        output2 = str(latitude) + '_' + str(longitude) + '_' + str(rssi) + '_' + str(cowid) + '_' + str(temp1) + '_' + str(temp2)
         #print(output2)
-        some_url = str(url + "/api/cow/log/" + output2)
+        some_url = str(url + '/api/cow/log/' + output2)
         print(some_url)
         try:
             #try:
@@ -116,7 +116,7 @@ while True:
             try:
                 import requests
                 r3 = requests.get(some_url)
-                print(str(r3))
+                print(r3.text)
             except Exception, e:
                 print('ERROR: '+ str(e))
     except Exception, e:
