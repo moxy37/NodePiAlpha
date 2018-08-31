@@ -56,6 +56,16 @@ router.get('/api/cow/update/:notes', function (req, res) {
     });
 });
 
+router.get('/api/cow/results', function (req, res) {
+    dao.cowResults(function (err, result) {
+        if (err) {
+            console.error(err.stack);
+            return res.status(400).send(err.message);
+        }
+        return res.send(result);
+    });
+});
+
 router.get('/api/light/set/:value', function (req, res) {
     var value = parseInt(req.params.value);
     __light = value;

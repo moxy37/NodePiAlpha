@@ -1,23 +1,12 @@
 var mysql = require('mysql2');
 
-
-// var mysql      = require('mysql');
-var dbConnection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'root',
-  database : 'alpha',
-  insecureAuth : true
+var dbConnection = mysql.createPool({
+    host:"localhost",
+    connectionLimit: 10,
+    user: "root",
+    password: "root",
+    port: 3306,
+    database: "alpha"
 });
- 
-// dbConnection.connect();// var dbConnection = mysql.createPool({
-//     connectionLimit: 10,
-//     host: "localhost",
-//     user: "root",
-//     password: "root",
-//     database: "alpha"
-// });
-
-
 
 module.exports = dbConnection;
