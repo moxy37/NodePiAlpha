@@ -60,7 +60,7 @@ def ReturnString(x):
         r = temp1[0]
     except:
         pass
-    return r
+    return str(r)
 
 url = "http://" + sys.argv[1] + ""
 latitude = '51.323'
@@ -91,7 +91,7 @@ while True:
         temp2 = data[5]
         output2 = latitude + "_" + longitude + "_" + rssi + "_" + cowid + "_" + temp1 + "_" + temp2
         print(output2)
-        some_url = url + "/api/cow/log/" + output2
+        some_url = str(url + "/api/cow/log/" + output2)
         try:
             try:
                 import urllib2 as urlreq # Python 2.x
@@ -102,14 +102,19 @@ while True:
             urlreq.urlopen(req).read()
             #import urllib.request
             #contents = urllib.request.urlopen(some_url).read()
-            #import urllib2
-            #f = urllib2.urlopen(some_url).read()
+            
             #import requests
             #r = requests.get(some_url)
             #import httplib2
             #resp, content = httplib2.Http().request(some_url)
         except:
-            print("FAILED: "+ some_url)
+            try:
+                import urllib2
+                f = urllib2.urlopen(some_url)
+                rr = f.read()
+                print(str(rr))
+            except:
+                print("FAILED: "+ some_url)
     except:
         pass
     output = " "
