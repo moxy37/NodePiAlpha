@@ -62,7 +62,7 @@ def ReturnString(x):
         pass
     return str(r)
 
-url = "http://192.168.0.22"# + sys.argv[1] + ""
+url = "http://" + sys.argv[1] + ""
 latitude = '51.323'
 longitude = '-114.213'
 temp1 = '37.2'
@@ -70,8 +70,8 @@ temp2 = '37.4'
 cowid = '1'
 rssi = '0'
 output = " "
-#ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
-ser = serial.Serial('/dev/ttyACM2', 9600, 8, 'N', 1, timeout=1)
+ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
+
 while True:
     print("----")
     tempstr = ''
@@ -108,14 +108,15 @@ while True:
             #r = requests.get(some_url)
             #import httplib2
             #resp, content = httplib2.Http().request(some_url)
-        except:
+        except Exception, e:
+            print('ERROR: '+ str(e))
             try:
                 import urllib2
                 f = urllib2.urlopen(some_url)
                 rr = f.read()
                 print(str(rr))
-            except:
-                print("FAILED: "+ some_url)
-    except:
-        pass
+            except Exception, e:
+                print('ERROR: '+ str(e)):
+    except Exception, e:
+        print('ERROR: '+ str(e)):
     output = " "
