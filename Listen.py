@@ -78,10 +78,10 @@ while True:
     while output != "":
         output = ser.readline()
         tempstr = tempstr + str(output)
-    print(tempstr)
+    #print(tempstr)
     try:
         o = ReturnString(tempstr)
-        print(o)
+        #print(o)
         data = o.split(':')
         latitude = data[0]
         longitude = data[1]
@@ -90,8 +90,9 @@ while True:
         temp1 = data[4]
         temp2 = data[5]
         output2 = latitude + "_" + longitude + "_" + rssi + "_" + cowid + "_" + temp1 + "_" + temp2
-        print(output2)
+        #print(output2)
         some_url = str(url + "/api/cow/log/" + output2)
+        print(some_url)
         try:
             try:
                 import urllib2 as urlreq # Python 2.x
