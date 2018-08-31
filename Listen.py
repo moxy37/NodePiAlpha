@@ -62,7 +62,7 @@ def ReturnString(x):
         pass
     return r
 
-url = 'http://' + sys.argv[1]
+url = "http://" + sys.argv[1] + ""
 latitude = '51.323'
 longitude = '-114.213'
 temp1 = '37.2'
@@ -89,18 +89,20 @@ while True:
         cowid = data[3]
         temp1 = data[4]
         temp2 = data[5]
-        output2 = latitude + '_' + longitude + '_' + rssi + '_' + cowid + '_' + temp1 + '_' + temp2
+        output2 = latitude + "_" + longitude + "_" + rssi + "_" + cowid + "_" + temp1 + "_" + temp2
         print(output2)
-        some_url = url + '/api/cow/log/' + output2
+        some_url = url + "/api/cow/log/" + output2
         try:
             #import urllib.request
             #contents = urllib.request.urlopen(some_url).read()
             #import urllib2
             #f = urllib2.urlopen(some_url).read()
-            import requests
-            r = requests.get(some_url)
+            #import requests
+            #r = requests.get(some_url)
+            import httplib2
+            resp, content = httplib2.Http().request(some_url)
         except:
-            print("FAILED: "+some_url)
+            print("FAILED: "+ some_url)
     except:
         pass
     output = " "
