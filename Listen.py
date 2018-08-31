@@ -4,7 +4,8 @@ import serial
 import string
 import time
 import sys
-import urllib2
+#import urllib2
+from urllib.request import urlopen
 
 def StringToInt(x):
     y = 0
@@ -93,8 +94,8 @@ while True:
         print(output2)
         try:
             some_url = url + '/api/cow/log/' + output2
-            f = urllib2.urlopen(some_url)
-            print f.read()
+            html = urlopen(some_url)
+            print(html)
         except:
             pass
     except:
