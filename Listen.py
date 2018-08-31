@@ -69,4 +69,5 @@ while True:
     while output != "":
         output = ser.readline()
         print(output)
+        print("Line ENd")
     output = " "
