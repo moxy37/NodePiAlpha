@@ -72,7 +72,7 @@ rssi = '0'
 ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
 oo = ' '
 while True:
-    while True:
+    while oo != "":
         try:
             oo = str(ser.readline())
             print(oo)
