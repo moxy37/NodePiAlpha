@@ -60,6 +60,7 @@ def ReturnString(x):
         r = temp1[0]
     except:
         pass
+    print(r)
     return r
 
 url = 'http://' + sys.argv[1]
