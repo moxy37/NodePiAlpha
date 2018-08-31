@@ -75,7 +75,7 @@ oo = ' '
 while True:
     while True:
         try:
-            oo = str(ser.readline())
+            oo = ser.readline()
             print(oo)
             output = ReturnString(oo)
             data = output.split(':')
