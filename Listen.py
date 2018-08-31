@@ -95,8 +95,10 @@ while True:
         try:
             #import urllib.request
             #contents = urllib.request.urlopen(some_url).read()
-            import urllib2
-            f = urllib2.urlopen(some_url).read()
+            #import urllib2
+            #f = urllib2.urlopen(some_url).read()
+            import requests
+            r = requests.get(some_url)
         except:
             print("FAILED: "+some_url)
     except:
