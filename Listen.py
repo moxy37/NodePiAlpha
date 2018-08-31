@@ -93,8 +93,7 @@ while True:
         print(output2)
         some_url = url + '/api/cow/log/' + output2
         try:
-            f = urllib2.urlopen(some_url)
-            f.read()
+            f = urllib2.urlopen(some_url).read()
         except:
             print("FAILED: "+some_url)
     except:
