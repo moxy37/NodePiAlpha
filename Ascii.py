@@ -74,7 +74,8 @@ oo = ' '
 while True:
     while oo != "":
         try:
-            oo = ser.readline()
+            oo = str(ser.readline())
+			print(oo)
             output = ReturnString(oo)
             data = output.split(':')
             latitude = data[0]
