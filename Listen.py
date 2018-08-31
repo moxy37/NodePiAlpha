@@ -62,7 +62,7 @@ def ReturnString(x):
         pass
     return str(r)
 
-url = "http://" + sys.argv[1] + ""
+url = "http://192.168.0.22"# + sys.argv[1] + ""
 latitude = '51.323'
 longitude = '-114.213'
 temp1 = '37.2'
@@ -70,8 +70,8 @@ temp2 = '37.4'
 cowid = '1'
 rssi = '0'
 output = " "
-ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
-
+#ser = serial.Serial('/dev/tty' + sys.argv[2], 9600, 8, 'N', 1, timeout=1)
+ser = serial.Serial('/dev/ttyACM2', 9600, 8, 'N', 1, timeout=1)
 while True:
     print("----")
     tempstr = ''
