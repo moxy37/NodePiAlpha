@@ -60,7 +60,7 @@ def ReturnString(x):
         r = temp1[0]
     except:
         pass
-    print(y)
+    #print(y)
     return r
 
 url = 'http://' + sys.argv[1]
@@ -78,6 +78,7 @@ while True:
             oo = ser.readline()
             print(oo)
             output = ReturnString(oo)
+            print(output)
             data = output.split(':')
             latitude = data[0]
             longitude = data[1]
