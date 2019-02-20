@@ -3,7 +3,7 @@ Very basic examples of how to interact with various plugins for a Pi.  Installin
 Once the image is installed load the Pi up and execute the following commands to ensure all software is installed correctly.
 
     sudo apt-get update --fix-missing
-	curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash 
+	curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash 
 	sudo apt-get install -y nodejs 
 	sudo apt-get install -y build-essential
 	sudo apt-get install mysql-server --fix-missing
